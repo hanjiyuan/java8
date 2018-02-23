@@ -40,6 +40,7 @@ public class Repository {
 		}
 	}
 
+	// why not synchronized?
 	public int getSize() {
 		return size;
 	}
