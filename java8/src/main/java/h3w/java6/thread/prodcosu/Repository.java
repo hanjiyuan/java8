@@ -20,7 +20,7 @@ public class Repository {
 	public synchronized void put() throws Exception{
 		if (index < size) {
 			units[index++] = value++;
-			// why not be placed in Consumer class?
+			// why not be placed in Producer class?
 			System.out.println(Thread.currentThread().getName()  
 					+ ": put " + units[index - 1]);
 		} else {
