@@ -13,10 +13,9 @@ public class Productor extends Thread {
 	public void run() {
 		int count = 0;
 		while (true) {
-			if (count == rep.getSize()) break;
+			if (count >= rep.getSize()) break;
 			try {
-				System.out.println(Thread.currentThread().getName()  
-						+ ": put " +  rep.put());
+				rep.put();
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			}

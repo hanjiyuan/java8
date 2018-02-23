@@ -17,30 +17,32 @@ public class Repository {
 		units = new int[size];
 	}
 
-	public synchronized int put() throws Exception{
+	public synchronized void put() throws Exception{
 		if (index < size) {
 			units[index++] = value++;
-			return units[index - 1];
+			System.out.println(Thread.currentThread().getName()  
+					+ ": put " + units[index - 1]);
 		} else {
 			throw new Exception(Thread.currentThread().getName() 
 					+ ": " + "repository is full");
 		}
 	}
 
-	public synchronized int get() throws Exception {
+	public synchronized void get() throws Exception {
 		if (index == 0) {
 			throw new Exception(Thread.currentThread().getName() 
 					+ ": " + "repository is empty");
 		} else {
-			return units[--index];
+			System.out.println(Thread.currentThread().getName() 
+					+ " : get " +  units[--index]);
 		}
 	}
 
-	public synchronized int getSize() {
+	public int getSize() {
 		return size;
 	}
 
-	public synchronized void setSize(int size) {
+	public void setSize(int size) {
 		this.size = size;
 	}
 }

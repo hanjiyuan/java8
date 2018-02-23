@@ -15,10 +15,10 @@ public class Consumer extends Thread {
 		while (true) {
 			if (count == rep.getSize()) break;
 			try {
-				System.out.println(Thread.currentThread().getName() 
-						+ " : get " +  rep.get());
+				rep.get();
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
+				continue;
 			}
 			count++;
 		}
