@@ -20,6 +20,7 @@ public class Repository {
 	public synchronized void put() throws Exception{
 		if (index < size) {
 			units[index++] = value++;
+			// why not be placed in Consumer class?
 			System.out.println(Thread.currentThread().getName()  
 					+ ": put " + units[index - 1]);
 		} else {
@@ -33,8 +34,9 @@ public class Repository {
 			throw new Exception(Thread.currentThread().getName() 
 					+ ": " + "repository is empty");
 		} else {
+			// why not be placed in Consumer class?
 			System.out.println(Thread.currentThread().getName() 
-					+ " : get " +  units[--index]);
+					+ ": get " +  units[--index]);
 		}
 	}
 

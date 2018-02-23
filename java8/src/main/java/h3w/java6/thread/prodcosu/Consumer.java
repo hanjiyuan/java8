@@ -13,12 +13,12 @@ public class Consumer extends Thread {
 	public void run() {
 		int count = 0;
 		while (true) {
-			if (count == rep.getSize()) break;
+			if (count == rep.getSize()) break; // why not synchronized?
 			try {
 				rep.get();
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
-				continue;
+				continue;  // why continue?
 			}
 			count++;
 		}

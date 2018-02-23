@@ -1,12 +1,12 @@
 package h3w.java6.thread.prodcosu;
 
 
-public class Productor extends Thread {
+public class Producer extends Thread {
 
 	private Repository rep;
 
-	public Productor(Repository rep) {
-		super("PRODUCTOR");
+	public Producer(Repository rep) {
+		super("PRODUCER");
 		this.rep = rep;
 	}
 
