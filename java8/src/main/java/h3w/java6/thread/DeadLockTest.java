@@ -1,20 +1,20 @@
-package test.thread.deadlock;
+package h3w.java6.thread;
 
 /**
  * A test case of dead lock. 
  * There are two threads, ReadThread and WriteThread.
- * The both need to acquire a lock to continue that holed by the other.
+ * The both need to acquire a lock to continue that held by the other.
  * 
  * @author HJY
  * @since 2012-12-5
  */
-public class DeadlockRisk extends Thread {
+public class DeadLockTest extends Thread {
 
 	private static class Resource {
 	}
-	
+
 	public static void main(String[] args) {
-		DeadlockRisk deakLock = new DeadlockRisk();
+		DeadLockTest deakLock = new DeadLockTest();
 		Resource a = new Resource();
 		Resource b = new Resource();
 		Thread w = deakLock.new WriteThread(a, b);
@@ -24,7 +24,8 @@ public class DeadlockRisk extends Thread {
 	}
 
 	/**
-	 * ReadThread, it will acquire resourceA lock first, then acquire resourceB lock
+	 * ReadThread, it will acquire resourceA lock first, 
+	 * then acquire resourceB lock
 	 * 
 	 * @author HJY
 	 * @since 2012-12-5
@@ -39,15 +40,12 @@ public class DeadlockRisk extends Thread {
 			this.resourceA = a;
 			this.resourceB = b;
 		}
-		
+
 		public void run() {
-			read();
-		}
-		
-		public void read() {
 			synchronized (resourceA) {
 				try {
-					System.out.println(Thread.currentThread().getName() + "  has aquired resourceA lock.");
+					System.out.println(Thread.currentThread().getName() 
+							+ "  has aquired resourceA lock.");
 					Thread.sleep(2000);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
@@ -60,7 +58,8 @@ public class DeadlockRisk extends Thread {
 	}
 
 	/**
-	 * WriteThread, it will acquire resourceB lock first, then acquire resourceA lock
+	 * WriteThread, it will acquire resourceB lock first, 
+	 * then acquire resourceA lock
 	 * 
 	 * @author HJY
 	 * @since 2012-12-5
@@ -77,12 +76,9 @@ public class DeadlockRisk extends Thread {
 		}
 
 		public void run() {
-			write();
-		}
-		
-		public void write() {
 			synchronized (resourceB) {
-				System.out.println(Thread.currentThread().getName() + " has aquired resourceB lock.");
+				System.out.println(Thread.currentThread().getName() 
+						+ " has aquired resourceB lock.");
 				try {
 					Thread.sleep(2000);
 				} catch (InterruptedException e) {

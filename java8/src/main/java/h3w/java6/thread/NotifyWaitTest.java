@@ -1,4 +1,4 @@
-package test.thread.notify;
+package h3w.java6.thread;
 
 /**
  * About wait() and notify() usage
@@ -6,11 +6,11 @@ package test.thread.notify;
  * @author HJY
  * @since 2012-12-6
  */
-public class Test {
+public class NotifyWaitTest {
 
 	public static void main(String[] args) {
 
-		Test t = new Test();
+		NotifyWaitTest t = new NotifyWaitTest();
 
 		Resource res = new Resource();
 
