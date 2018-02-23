@@ -1,4 +1,4 @@
-package test.thread.prodcosu;
+package h3w.java6.thread.prodcosu;
 
 
 public class Consumer extends Thread {
@@ -16,7 +16,7 @@ public class Consumer extends Thread {
 			if (count == rep.getSize()) break;
 			try {
 				System.out.println(Thread.currentThread().getName() 
-						+ ": get " +  rep.get());
+						+ " : get " +  rep.get());
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			}

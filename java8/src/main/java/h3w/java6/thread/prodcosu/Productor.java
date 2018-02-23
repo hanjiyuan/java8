@@ -1,4 +1,4 @@
-package test.thread.prodcosu;
+package h3w.java6.thread.prodcosu;
 
 
 public class Productor extends Thread {

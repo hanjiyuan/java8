@@ -1,4 +1,4 @@
-package test.thread.prodcosu;
+package h3w.java6.thread.prodcosu;
 
 public class Repository {
 
@@ -36,11 +36,11 @@ public class Repository {
 		}
 	}
 
-	public int getSize() {
+	public synchronized int getSize() {
 		return size;
 	}
 
-	public void setSize(int size) {
+	public synchronized void setSize(int size) {
 		this.size = size;
 	}
 }

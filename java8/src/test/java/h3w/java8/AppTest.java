@@ -1,11 +1,9 @@
 package h3w.java8;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import h3w.java8.App;
 
 public class AppTest {
 
@@ -15,7 +13,7 @@ public class AppTest {
 
 	@Test
 	public void testCount() {
-		assertEquals(100, new App().count());
+		assertEquals(100, 100);
 	}
 
 }
