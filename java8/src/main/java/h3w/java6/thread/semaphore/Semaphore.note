@@ -1,0 +1,10 @@
+Semaphore
+
+1. 为什么非公平锁会比公平锁有较高的吞吐量?
+
+2. 为什么在事先没有调用acquire()的情况下，可以调用release()
+ 首先，在没有调用acquire()的情况下，调用release()，会发现，Semaphore的许可数会加1
+
+3. 只有1个许可的Semaphore和Lock有什么区别?
+只有1个许可的Semaphore和Lock在效果上类似,排他锁,但有一点区别:
+即,Semaphore的1个许可可以由其他未占有该许可的线程释放.
