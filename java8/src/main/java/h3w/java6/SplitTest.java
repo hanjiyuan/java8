@@ -9,6 +9,8 @@ public class SplitTest {
         System.out.println(arr.length);
         // print b
         System.out.println(arr[arr.length - 1]);
+        
+        System.out.println(new Object().toString());
     }
 
 }
