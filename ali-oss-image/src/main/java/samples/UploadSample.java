@@ -19,13 +19,13 @@ public class UploadSample {
     private static String accessKeyId = "LTAIvxjdjJS921VE";
     private static String accessKeySecret = "VtKISwV0y1G5hm3MgxXWZJw2vNSRfQ";
     private static String bucketName = "bucket-jgkk";
-    private static String key = "jg/cloud/test/2.jpg";
-    private static String uploadFile = "E:\\pic\\1.jpg";
+    private static String key = "jg/cloud/test/IMG_8764.JPG";
+    private static String uploadFile = "E:\\pic\\IMG_8764.JPG";
 
     public static void main(String[] args) throws IOException {        
 
         OSSClient ossClient = new OSSClient(endpoint, accessKeyId, accessKeySecret);
-        
+        long start = System.currentTimeMillis();
         try {
             UploadFileRequest uploadFileRequest = new UploadFileRequest(bucketName, key);
             // 待上传的本地文件
@@ -60,5 +60,6 @@ public class UploadSample {
         } finally {
             ossClient.shutdown();
         }
+        System.out.println(System.currentTimeMillis() - start);
     }
 }

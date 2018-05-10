@@ -15,16 +15,22 @@ import com.aliyun.oss.model.ObjectMetadata;
  */
 public class DownloadSample {
     
-    private static String endpoint = "<endpoint, http://oss-cn-hangzhou.aliyuncs.com>";
-    private static String accessKeyId = "<accessKeyId>";
-    private static String accessKeySecret = "<accessKeySecret>";
-    private static String bucketName = "<bucketName>";
-    private static String key = "<downloadKey>";
-    private static String downloadFile = "<downloadFile>";
+    private static String endpoint = "oss-cn-beijing.aliyuncs.com";
+    private static String accessKeyId = "LTAIvxjdjJS921VE";
+    private static String accessKeySecret = "VtKISwV0y1G5hm3MgxXWZJw2vNSRfQ";
+    private static String bucketName = "bucket-jgkk";
+    private static String key = "jg/cloud/test/IMG_8764.JPG";
+    private static String downloadFile = "E:\\pic\\IMG_8764-0.JPG";
    
     
     public static void main(String[] args) throws IOException {        
-
+        for (int i = 0; i < 10; i++) {
+            down();
+        }
+    }
+    
+    public static void down() {
+        long start = System.currentTimeMillis();
         OSSClient ossClient = new OSSClient(endpoint, accessKeyId, accessKeySecret);
         
         try {
@@ -62,5 +68,6 @@ public class DownloadSample {
         } finally {
             ossClient.shutdown();
         }
+        System.out.println(System.currentTimeMillis() - start);
     }
 }

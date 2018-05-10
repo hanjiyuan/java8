@@ -18,7 +18,7 @@ public class ImageSample {
     private static String accessKeyId = "LTAIvxjdjJS921VE";
     private static String accessKeySecret = "VtKISwV0y1G5hm3MgxXWZJw2vNSRfQ";
     private static String bucketName = "bucket-jgkk";
-    private static String key = "jg/cloud/test/3.jpg";
+    private static String key = "jg/cloud/test/IMG_8764.JPG";
 
     public static void main(String[] args) throws IOException {
         printAll();
@@ -33,7 +33,7 @@ public class ImageSample {
         System.out.printf("%-17s", "格式转换");
         System.out.printf("%-17s", "图片信息");
         System.out.println();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 5; i++) {
             printLine();
         }
     }
